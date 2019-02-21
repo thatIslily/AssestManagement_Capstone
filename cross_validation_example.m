@@ -1,7 +1,7 @@
 m = readtable('regress_example.xlsx');
 N = size(m,1);
 inc = N./10;
-
+inc
 clf
 plotnum=1;
 subplot(11,1,plotnum);
@@ -14,9 +14,11 @@ for test=N:-inc:inc
     if test>inc
         train = 1:test-inc;
     end
+    train
     if test<N
         train = [train test+1:N];
     end
+    train
     subplot(11, 1, plotnum);
     i = test-inc+1:test;
     plot(m.Date(train), m.JSEZAR(train),'bo');
